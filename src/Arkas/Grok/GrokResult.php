@@ -15,4 +15,13 @@ class GrokResult
     $this->keyword = $keyword;
     $this->filename = $filename;
   }
+
+  public function output( $output, $color = 'info' )
+  {
+    $open_color = '<' . $color . '>';
+    $close_color = '</' . $color . '>';
+
+    $data = str_replace( $this->keyword, $open_color . $this->keyword . $close_color, $this->data );
+    $output->writeln( $this->filename . ':' . $this->line . ":\t" . rtrim($data) );
+  }
 }

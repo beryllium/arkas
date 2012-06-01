@@ -125,6 +125,10 @@ if ('cli' === php_sapi_name() && basename(__FILE__) === basename($_SERVER['argv'
 }
 
 $app = new \Arkas\Application('Arkas');
+$app['grok_factory'] = function ( $filename ) use ( $app ) {
+  $grok = new \Arkas\GrokFactory( $filename );
+  return $grok;
+};
 $app->command( new \Arkas\Command\SearchCommand() );
 $app->run();
 
