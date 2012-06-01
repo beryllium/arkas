@@ -12,7 +12,6 @@
     ],
     "require":{
         "php":                  ">=5.3.2",
-        "cilex/cilex":          "dev-master",
         "pimple/pimple":        "dev-master",
         "symfony/class-loader": "2.1.*",
         "symfony/console":      "2.1.*",
