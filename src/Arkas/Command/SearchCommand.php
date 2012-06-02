@@ -41,7 +41,8 @@ class SearchCommand extends Command
           $chaff->setDirFilters( $dir_excludes );
           $chaff->setFileFilters( $file_excludes );
 
-          foreach( new \RecursiveIteratorIterator( $chaff, \RecursiveIteratorIterator::SELF_FIRST ) as $filename=>$curfile )
+          //foreach( new \RecursiveIteratorIterator( $chaff, \RecursiveIteratorIterator::SELF_FIRST ) as $filename=>$curfile )
+          foreach( new \RecursiveIteratorIterator( $chaff ) as $filename=>$curfile )
           {
             $grok = $this->container[ 'grok_factory' ]->getGrok($filename);
             $grok->file( $filename );
