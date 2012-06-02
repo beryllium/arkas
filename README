@@ -1,9 +1,10 @@
-ARKAS
-=====
+ARKAS the Hunter
+================
 
-Arkas is a code search tool. It's basically grep with a twist - when examining 
-certain files, such as PHP files, it keeps track of the current Class and 
-Function being scanned. This helps in the hunt for obscure bugs and regressions.
+Arkas the Hunter is a code search tool. It's basically grep with a twist - when 
+examining certain files, such as PHP files, it keeps track of the current Class 
+and Function being scanned. This helps in the hunt for obscure bugs and 
+regressions.
 
 Using Arkas, you can trace spaghetti code back through the entire codebase to 
 reveal exactly how deep the rabbit hole goes.
