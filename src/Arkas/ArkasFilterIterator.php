@@ -36,29 +36,4 @@ class ArkasFilterIterator extends \RecursiveFilterIterator
 
     return true;
   }
-/*
-  public function getChildren()
-  {
-    if ( $this->accept() )
-    {
-      return parent::getChildren();
-    }
-
-    return false;
-  }
-
-  public function hasChildren()
-  {
-    if ( $this->accept() )
-    {
-      return parent::hasChildren();
-    }
-
-    return false;
-  }
- */
-
-  public function __clone()
-  {
-  }
 }
