@@ -117,11 +117,9 @@ if ('cli' === php_sapi_name() && basename(__FILE__) === basename($_SERVER['argv'
             printf("Arkas version %s\n", Arkas\Application::VERSION);
             break;
 
-        //default:
-            //printf("Unknown command '%s' (available commands: version, check, and update).\n", $_SERVER['argv'][1]);
+        default:
+          break;
     }
-
-    //exit(0);
 }
 
 $app = new \Arkas\Application('Arkas');
@@ -129,6 +127,40 @@ $app['grok_factory'] = function ( $filename ) use ( $app ) {
   $grok = new \Arkas\GrokFactory( $filename );
   return $grok;
 };
+
+$app['arkas_settings'] = function ( $c ) {
+  $settings = array();
+  $global_settings = array();
+  $user_settings = array();
+  
+  $default_settings = array(
+    'dir_excludes' => array(
+      '.svn',
+      '.git',
+    ),
+    'file_excludes' => array(
+      '.phar',
+      '.tgz',
+      '.gz',
+      '.zip',
+    ),
+  );
+
+  if ( file_exists( $_SERVER[ 'HOME' ] . '.arkas' ) )
+  {
+    $user_settings = parse_ini_file( $_SERVER[ 'HOME' ] . '.arkas' );
+  }
+
+  if ( file_exists( '/etc/arkas.config' ) )
+  {
+    $global_settings = parse_ini_file( '/etc/arkas.config' );
+  }
+
+  $settings = array_merge( $default_settings, $global_settings, $user_settings );
+
+  return $settings;
+};
+
 $app->command( new \Arkas\Command\SearchCommand() );
 $app->run();
 

@@ -3,15 +3,13 @@
 namespace Arkas\Command;
 
 use Arkas\Grok;
+use Arkas\ArkasFilterIterator;
 
 use Symfony\Component\Console\Input\InputArgument;
 use Symfony\Component\Console\Input\InputInterface;
 use Symfony\Component\Console\Input\InputOption;
 use Symfony\Component\Console\Output\OutputInterface;
 
-/**
- * Example command for testing purposes.
- */
 class SearchCommand extends Command
 {
     protected function configure()
@@ -35,10 +33,16 @@ class SearchCommand extends Command
         if ( is_dir( $dir ) )
         {
           $begin = new \RecursiveDirectoryIterator( $dir );
+          
+          $dir_excludes = $this->container[ 'arkas_settings' ][ 'dir_excludes' ];
+          $file_excludes = $this->container[ 'arkas_settings' ][ 'file_excludes' ];
 
-          foreach( new \RecursiveIteratorIterator( $begin ) as $filename=>$curfile )
+          $chaff = new ArkasFilterIterator( $begin );
+          $chaff->setDirFilters( $dir_excludes );
+          $chaff->setFileFilters( $file_excludes );
+
+          foreach( new \RecursiveIteratorIterator( $chaff, \RecursiveIteratorIterator::SELF_FIRST ) as $filename=>$curfile )
           {
-            //$output->writeln( 'Checking ' . $filename );
             $grok = $this->container[ 'grok_factory' ]->getGrok($filename);
             $grok->file( $filename );
             $result = $grok->grok( $keyword );
@@ -69,7 +73,6 @@ class SearchCommand extends Command
           }
 
           $output->writeln( "\n" . count( $results ) . ' files matched' );
-
         }
     }
 }
