@@ -1,17 +1,6 @@
 {
-    "hash": "8a5de8402329a6a54eb5c27f26b58869",
+    "hash": "7ee29945b3eacbb27000a02f2fa6e295",
     "packages": [
-        {
-            "package": "cilex/cilex",
-            "version": "dev-master",
-            "alias-pretty-version": "1.0.x-dev",
-            "alias-version": "1.0.9999999.9999999-dev"
-        },
-        {
-            "package": "cilex/cilex",
-            "version": "dev-master",
-            "source-reference": "c9db6dcf69ea9bc11e6bd2f25459075cafc5a305"
-        },
         {
             "package": "pimple/pimple",
             "version": "dev-master",
@@ -26,13 +15,19 @@
         {
             "package": "symfony/class-loader",
             "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
+            "source-reference": "dd3f2ad5204df88b8938430e39a25c9a7f53f079"
         },
         {
             "package": "symfony/class-loader",
             "version": "dev-master",
-            "source-reference": "dd3f2ad5204df88b8938430e39a25c9a7f53f079"
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
+        },
+        {
+            "package": "symfony/console",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/console",
@@ -40,21 +35,15 @@
             "source-reference": "22be75777fe18315637abe092de5aa5c7f4ed3cd"
         },
         {
-            "package": "symfony/console",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
-            "package": "symfony/finder",
-            "version": "dev-master",
-            "alias-pretty-version": "2.1.x-dev",
-            "alias-version": "2.1.9999999.9999999-dev"
-        },
-        {
             "package": "symfony/finder",
             "version": "dev-master",
             "source-reference": "9ee9a907afeef52956187e862714a7702ca26590"
+        },
+        {
+            "package": "symfony/finder",
+            "version": "dev-master",
+            "alias-pretty-version": "2.1.x-dev",
+            "alias-version": "2.1.9999999.9999999-dev"
         },
         {
             "package": "symfony/process",
@@ -74,7 +63,6 @@
     ],
     "minimum-stability": "dev",
     "stability-flags": {
-        "cilex/cilex": 20,
         "pimple/pimple": 20
     }
 }

@@ -4,3 +4,8 @@ require_once __DIR__.'/vendor/autoload.php';
 
 $compiler = new Arkas\Compiler();
 $compiler->compile();
+
+if ( file_exists( './arkas.phar' ) )
+{
+  chmod( 'arkas.phar', 0755 );
+}

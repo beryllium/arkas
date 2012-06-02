@@ -80,6 +80,7 @@ class Compiler
     protected function getStub()
     {
         return <<<'EOF'
+#!/usr/bin/env php
 <?php
 
 /*
