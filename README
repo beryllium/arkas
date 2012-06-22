@@ -9,6 +9,9 @@ regressions.
 Using Arkas, you can trace spaghetti code back through the entire codebase to 
 reveal exactly how deep the rabbit hole goes.
 
+There is a lot of room for code cleanup and optimization in this initial version,
+but it works well enough to save me from a headache every once in a while.
+
 
 
 Installation
@@ -20,7 +23,7 @@ Type this on the command line to create the arkas.phar file:
   $ ./composer.phar install
   $ php compile
 
-Then, symlink to arkas.phar somewhere in your path:
+Then, symlink to arkas.phar somewhere in your path (assuming you cloned it to /data/tools/arkas):
   $ sudo ln -s /data/tools/arkas/arkas.phar /usr/local/bin/arkas
 
 
@@ -33,3 +36,15 @@ Change into the folder you want to search:
 
 Issue a simple search:
   $ arkas mysqli_real_escape_string
+
+
+
+Contributors
+------------
+
+- Kevin Boyd <kboyd@acdsystems.com>
+
+Based on Silex and Cilex, and the Symfony2 components.
+
+- Silex & Symfony2: Fabien Potencier <fabien@symfony.com>
+- Cilex: Mike van Riel <mike.vanriel@naenius.com>
