@@ -18,6 +18,7 @@ class GrokFactory
       $ext = pathinfo( basename( $filename ), PATHINFO_EXTENSION );
     }
 
+    //@todo Add more supported file types (.js, .css, .cpp, .cs, .java, .twig, etc)
     switch( strtolower( $ext ) )
     {
     case 'php':

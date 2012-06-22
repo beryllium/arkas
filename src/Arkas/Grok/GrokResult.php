@@ -17,7 +17,7 @@ class GrokResult
     public function __construct($line, $data, $keyword, $filename)
     {
         $this->line = $line;
-        $this->data = $data;
+        $this->data = $this->cleanData($data);
         $this->keyword = $keyword;
         $this->filename = $filename;
     }
@@ -33,7 +33,21 @@ class GrokResult
         $open_color = '<' . $color . '>';
         $close_color = '</' . $color . '>';
 
+
+
         $data = str_replace($this->keyword, $open_color . $this->keyword . $close_color, $this->data);
         $output->writeln($this->filename . ':' . $this->line . ":\t" . rtrim($data));
+    }
+
+    public function cleanData( $data )
+    {
+        //Truncate lines that are too long to be useful
+        //This is intended to be a code search, not a wumpus hunt
+        if ( strlen( $data ) > 200 )
+        {
+            $data = substr( $data, 0, 160 ) . ' [...truncated...]';
+        }
+
+        return trim($data);
     }
 }

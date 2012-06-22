@@ -1,6 +1,9 @@
 <?php
 namespace Arkas;
 
+/**
+ * Custom Filter Iterator to let us skip folders like .svn, .git, as well as ignoring files by extension
+ */
 class ArkasFilterIterator extends \RecursiveFilterIterator
 {
   public static $DIR_FILTERS = array();

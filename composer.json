@@ -2,7 +2,7 @@
     "name":        "beryllium/arkas",
     "description": "The code hunter, for when you need to see how deep the rabbit hole goes.",
     "keywords":    ["grep","ack","search","tool","utility","cli"],
-    "homepage":    "http://arkas.whateverthing.com/",
+    "homepage":    "http://github.com/beryllium/arkas",
     "license":     "MIT",
     "authors":[
         {
