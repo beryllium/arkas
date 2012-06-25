@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/pygment_trac.css" media="screen" />
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print" />
+
+    <title>Arkas by beryllium</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Arkas</h1>
+        <h2>Arkas, the Code Hunter</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/beryllium/arkas/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/beryllium/arkas/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/beryllium/arkas" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>ARKAS the Hunter</h1>
+
+<p>Arkas the Hunter is a code search tool. It's basically grep with a twist - when 
+examining certain files, such as PHP files, it keeps track of the current Class 
+and Function being scanned. This helps in the hunt for obscure bugs and 
+regressions.</p>
+
+<p>Using Arkas, you can trace spaghetti code back through the entire codebase to 
+reveal exactly how deep the rabbit hole goes.</p>
+
+<p>There is a lot of room for code cleanup and optimization in this initial version,
+but it works well enough to save me from a headache every once in a while.</p>
+
+<h2>Installation</h2>
+
+<p>Type this on the command line to create the arkas.phar file:</p>
+
+<pre><code>$ bin/fetch-composer
+$ ./composer.phar install
+$ php compile
+</code></pre>
+
+<p>Then, symlink to arkas.phar somewhere in your path (assuming you cloned it to /data/tools/arkas):</p>
+
+<pre><code>$ sudo ln -s /data/tools/arkas/arkas.phar /usr/local/bin/arkas
+</code></pre>
+
+<h2>Usage</h2>
+
+<p>Change into the folder you want to search:</p>
+
+<pre><code>$ cd /var/www
+</code></pre>
+
+<p>Issue a simple search:</p>
+
+<pre><code>$ arkas mysqli_real_escape_string
+</code></pre>
+
+<h2>Contributors</h2>
+
+<ul>
+<li>Kevin Boyd (<a href="mailto:kboyd@acdsystems.com">kboyd@acdsystems.com</a>)</li>
+</ul><p>Based on Silex and Cilex, and the Symfony2 components.</p>
+
+<ul>
+<li>Silex &amp; Symfony2: Fabien Potencier (<a href="mailto:fabien@symfony.com">fabien@symfony.com</a>)</li>
+<li>Cilex: Mike van Riel (<a href="mailto:mike.vanriel@naenius.com">mike.vanriel@naenius.com</a>)</li>
+</ul>
+      </section>
+    </div>
+
+              <script type="text/javascript">
+            var gaJsHost = (("https:" == document.location.protocol) ? "https://ssl." : "http://www.");
+            document.write(unescape("%3Cscript src='" + gaJsHost + "google-analytics.com/ga.js' type='text/javascript'%3E%3C/script%3E"));
+          </script>
+          <script type="text/javascript">
+            try {
+              var pageTracker = _gat._getTracker("UA-26177718-2");
+            pageTracker._trackPageview();
+            } catch(err) {}
+          </script>
+
+  </body>
+</html>
