@@ -19,8 +19,7 @@
         <h2>Arkas, the Code Hunter</h2>
 
         <section id="downloads">
-          <a href="https://github.com/beryllium/arkas/zipball/master" class="btn">Download as .zip</a>
-          <a href="https://github.com/beryllium/arkas/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="arkas.phar" class="btn">Download as .phar</a>
           <a href="https://github.com/beryllium/arkas" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
         </section>
       </div>
@@ -40,6 +39,14 @@ reveal exactly how deep the rabbit hole goes.</p>
 
 <p>There is a lot of room for code cleanup and optimization in this initial version,
 but it works well enough to save me from a headache every once in a while.</p>
+
+<h2>Before Installation</h2>
+
+<p>Compiling arkas.phar requires that phar.readonly be set to "Off" in your php.ini:</p>
+
+<pre><code>[Phar]
+phar.readonly = Off
+</code></pre>
 
 <h2>Installation</h2>
 
