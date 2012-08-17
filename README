@@ -12,7 +12,14 @@ reveal exactly how deep the rabbit hole goes.
 There is a lot of room for code cleanup and optimization in this initial version,
 but it works well enough to save me from a headache every once in a while.
 
+Before Installing
+-----------------
 
+Compiling arkas.phar requires that phar.read_only be set to "Off" in your php.ini:
+
+  [Phar]
+  phar.readonly = Off
+  
 
 Installation
 ------------
